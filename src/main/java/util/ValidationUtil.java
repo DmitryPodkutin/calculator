@@ -24,10 +24,8 @@ public class ValidationUtil {
     }
 
     public static boolean thisRomanNumber(String[] numbers) {
-        return "true".equals(Arrays.stream(numbers).reduce((firstNumber, secondNumber) -> {
-            checkOnlyArabicOrOnlyRoman(firstNumber, secondNumber);
-            return String.valueOf(firstNumber.matches(romanNumberRegex) || secondNumber.matches(romanNumberRegex));
-        }).orElse("false"));
+        return Arrays.stream(numbers).allMatch(number -> number.matches(romanNumberRegex));
+
     }
 
     public static void checkOnlyArabicOrOnlyRoman(String firstNumber, String secondNumber) {

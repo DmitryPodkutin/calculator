@@ -6,20 +6,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static util.RomanArabicConverter.romanToArabic;
-import static util.ValidationUtil.checkIncomingData;
-import static util.ValidationUtil.romanNumberRegex;
-import static util.ValidationUtil.thisRomanNumber;
+import static util.ValidationUtil.*;
 
 public class Parser {
     public MathematicalOperation parse(String string) {
         String validString = checkIncomingData(string);
         Matcher matcher = Pattern.compile("[+\\-*/]").matcher(validString.trim());
+        String operation = null;
         if (matcher.find()) {
-            String operation = matcher.group();
-            String[] numbers = validString.split("\\" + operation);
-            return createMathematicalOperation(operation, numbers);
+            operation = matcher.group();
         }
-        return null;
+        String[] numbers = validString.split("\\" + operation);
+        checkOnlyArabicOrOnlyRoman(numbers[0], numbers[1]);
+        return createMathematicalOperation(operation, numbers);
     }
 
     private static MathematicalOperation createMathematicalOperation(String operation, String[] numbers) {
