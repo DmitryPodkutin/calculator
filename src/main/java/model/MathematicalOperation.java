@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class MathematicalOperation {
     private final int numberOne;
     private final int numberTwo;
@@ -27,5 +29,31 @@ public class MathematicalOperation {
 
     public boolean isRomeNumber() {
         return romeNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MathematicalOperation that = (MathematicalOperation) o;
+        return numberOne == that.numberOne &&
+                numberTwo == that.numberTwo &&
+                romeNumber == that.romeNumber &&
+                operation.equals(that.operation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOne, numberTwo, operation, romeNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "MathematicalOperation{" +
+                "numberOne=" + numberOne +
+                ", numberTwo=" + numberTwo +
+                ", operation='" + operation + '\'' +
+                ", romeNumber=" + romeNumber +
+                '}';
     }
 }

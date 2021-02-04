@@ -11,7 +11,7 @@ public class Calculate {
         String operation = math.getOperation();
         int secondNumber = math.getNumberTwo();
 
-        int result = switch (operation) {
+        Integer result = switch (operation) {
             case "+" -> firstNumber + secondNumber;
             case "-" -> firstNumber - secondNumber;
             case "*" -> firstNumber * secondNumber;
