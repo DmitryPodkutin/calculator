@@ -9,7 +9,14 @@ public class ParserTest {
     @Test
     public void parse(){
         Assertions.assertEquals(new MathematicalOperation(5,"+",8,false),parser.parse("5+8"));
-        Assertions.assertEquals(new MathematicalOperation(5,"+",8,true),parser.parse("V+VIII"));
-    }
+        Assertions.assertEquals(new MathematicalOperation(5,"-",8,false),parser.parse("5-8"));
+        Assertions.assertEquals(new MathematicalOperation(5,"/",8,false),parser.parse("5/8"));
+        Assertions.assertEquals(new MathematicalOperation(5,"*",8,false),parser.parse("5*8"));
 
+        Assertions.assertEquals(new MathematicalOperation(5,"+",8,true),parser.parse("V+VIII"));
+        Assertions.assertEquals(new MathematicalOperation(5,"-",8,true),parser.parse("V-VIII"));
+        Assertions.assertEquals(new MathematicalOperation(5,"/",8,true),parser.parse("V/VIII"));
+        Assertions.assertEquals(new MathematicalOperation(5,"*",8,true),parser.parse("V*VIII"));
+    }
 }
+

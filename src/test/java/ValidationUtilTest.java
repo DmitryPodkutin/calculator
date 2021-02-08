@@ -14,7 +14,7 @@ import static util.ValidationUtil.*;
 public class ValidationUtilTest {
     Pattern pattern = Pattern.compile(ValidationUtil.REGEX);
     List<String> falseStrings = Arrays.asList("10+31", "12+1", "1+0", "01+1", "1+31", "10+g", "A+22");
-    List<String> trueStrings = Arrays.asList("1+10", "1+9");
+    List<String> trueStrings = Arrays.asList("1+10", "10-9" , "10*9", "10/9");
     String[] romanNumbers = new String[]{"II", "V"};
 
     @Test
