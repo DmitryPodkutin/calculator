@@ -1,3 +1,5 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/47f8a068eab44560b4283f4509cbacf2)](https://www.codacy.com/gh/DmitryPodkutin/calculator/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DmitryPodkutin/calculator&amp;utm_campaign=Badge_Grade)
+
  ### Задача: “Калькулятор”
 
 #### Описание:

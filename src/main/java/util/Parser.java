@@ -6,8 +6,12 @@ import java.text.MessageFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static util.RomanArabicConverter.romanToArabic;
-import static util.ValidationUtil.*;
+import static util.RomanArabicConverterUtil.romanToArabic;
+import static util.ValidationUtil.checkIncomingData;
+import static util.ValidationUtil.operation;
+import static util.ValidationUtil.checkOnlyArabicOrOnlyRoman;
+import static util.ValidationUtil.romanNumberRegex;
+import static util.ValidationUtil.thisRomanNumber;
 
 public class Parser {
     public MathematicalOperation parse(String string) {

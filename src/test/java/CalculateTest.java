@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import util.Calculate;
 
 public class CalculateTest {
-
-    Calculate calculate = new Calculate();
+    private final Calculate calculate = new Calculate();
 
     @Test
     public void result() {

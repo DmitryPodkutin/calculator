@@ -1,6 +1,5 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.Test;
-import util.ValidationUtil;
+import org.junit.jupiter.api.Assertions;
 import util.exeption.ValidationException;
 
 import java.util.Arrays;
@@ -8,14 +7,17 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertThrows;
-import static util.ValidationUtil.*;
+import static util.ValidationUtil.REGEX;
+import static util.ValidationUtil.checkIncomingData;
+import static util.ValidationUtil.checkOnlyArabicOrOnlyRoman;
+import static util.ValidationUtil.thisRomanNumber;
 
 
 public class ValidationUtilTest {
-    Pattern pattern = Pattern.compile(ValidationUtil.REGEX);
-    List<String> falseStrings = Arrays.asList("10+31", "12+1", "1+0", "01+1", "1+31", "10+g", "A+22");
-    List<String> trueStrings = Arrays.asList("1+10", "10-9" , "10*9", "10/9");
-    String[] romanNumbers = new String[]{"II", "V"};
+    private final Pattern pattern = Pattern.compile(REGEX);
+    private final List<String> falseStrings = Arrays.asList("10+31", "12+1", "1+0", "01+1", "1+31", "10+g", "A+22");
+    private final List<String> trueStrings = Arrays.asList("1+10", "10-9", "10*9", "10/9");
+    private final String[] romanNumbers = new String[]{"II", "V"};
 
     @Test
     public void unCorrectIncomingData() {

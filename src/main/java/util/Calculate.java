@@ -18,6 +18,6 @@ public class Calculate {
             case "/" -> firstNumber / secondNumber;
             default -> throw new IllegalStateException("Unexpected operation: " + operation);
         };
-        return (T) (math.isRomeNumber() ? RomanArabicConverter.arabicToRoman(result) : result);
+        return (T) (math.isRomeNumber() ? RomanArabicConverterUtil.arabicToRoman(result) : result);
     }
 }

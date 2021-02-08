@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 //https://www.baeldung.com/java-convert-roman-arabic
-public class RomanArabicConverter {
-
+public class RomanArabicConverterUtil {
 
     public static int romanToArabic(String input) {
         String romanNumeral = input.toUpperCase();
