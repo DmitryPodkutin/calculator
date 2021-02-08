@@ -6,6 +6,7 @@ import util.Parser;
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class ParserTest {
     private final Parser parser = new Parser();
@@ -18,14 +19,14 @@ public class ParserTest {
     @Test
     public void arabicParse() {
         listOperations.forEach(operation -> Assertions.assertEquals(new MathematicalOperation(firstArabicNumber, operation, secondArabicNumber, false)
-                , parser.parse(MessageFormat.format("{0}" + operation + "{1}", firstArabicNumber, secondArabicNumber))));
+                , Objects.requireNonNull(parser.readString(MessageFormat.format("{0}" + operation + "{1}", firstArabicNumber, secondArabicNumber)))));
 
     }
 
     @Test
     public void romanParse() {
         listOperations.forEach(operation -> Assertions.assertEquals(new MathematicalOperation(firstArabicNumber, operation, secondArabicNumber, true)
-                , parser.parse(MessageFormat.format("{0}" + operation + "{1}", firstRomanNumber, secondRomanNumber))));
+                , Objects.requireNonNull(parser.readString(MessageFormat.format("{0}" + operation + "{1}", firstRomanNumber, secondRomanNumber)))));
     }
 }
 

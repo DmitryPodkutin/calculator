@@ -1,6 +1,7 @@
 import util.Calculate;
 import util.Parser;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +11,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a Mathematical Operation: ");
         String string = scanner.nextLine();
-        System.out.println("Result: " + calculate.result(parser.parse(string)));
+        System.out.println("Result: " + calculate.result(Objects.requireNonNull(parser.readString(string), "String must not be Null ")));
     }
 }

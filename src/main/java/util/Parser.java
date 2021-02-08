@@ -14,16 +14,16 @@ import static util.ValidationUtil.romanNumberRegex;
 import static util.ValidationUtil.thisRomanNumber;
 
 public class Parser {
-    public MathematicalOperation parse(String string) {
+    public MathematicalOperation readString(String string) {
         String validString = checkIncomingData(string);
         Matcher matcher = Pattern.compile(operation).matcher(validString.trim());
-        String operation = null;
         if (matcher.find()) {
-            operation = matcher.group();
+            String operation = matcher.group();
+            String[] numbers = validString.split(MessageFormat.format("\\{0}", operation));
+            checkOnlyArabicOrOnlyRoman(numbers[0], numbers[1]);
+            return createMathematicalOperation(operation, numbers);
         }
-        String[] numbers = validString.split(MessageFormat.format("\\{0}", operation));
-        checkOnlyArabicOrOnlyRoman(numbers[0], numbers[1]);
-        return createMathematicalOperation(operation, numbers);
+        return null;
     }
 
     private static MathematicalOperation createMathematicalOperation(String operation, String[] numbers) {

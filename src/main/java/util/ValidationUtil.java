@@ -12,10 +12,9 @@ public class ValidationUtil {
     public final static String romanNumberRegex = "|I|II|III|IV|V|VI|VII|VIII|IX|X";
     public final static String arabicNumberRegex = "[1-9]|10";
     public final static String operation = "[-+*/]";
-    public final static String REGEX = MessageFormat.format("({0}{2}){1}({0}{2})", arabicNumberRegex,operation,romanNumberRegex);
+    public final static String REGEX = MessageFormat.format("({0}{2}){1}({0}{2})", arabicNumberRegex,operation,romanNumberRegex);// String.format vs MessageFormat.format https://rsdn.org/forum/java/2975872.1
 
     public static String checkIncomingData(String str) {
-
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(str);
         if (matcher.matches()) {
