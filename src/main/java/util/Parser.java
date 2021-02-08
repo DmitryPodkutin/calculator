@@ -2,6 +2,7 @@ package util;
 
 import model.MathematicalOperation;
 
+import java.text.MessageFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,12 +12,12 @@ import static util.ValidationUtil.*;
 public class Parser {
     public MathematicalOperation parse(String string) {
         String validString = checkIncomingData(string);
-        Matcher matcher = Pattern.compile("[+\\-*/]").matcher(validString.trim());
+        Matcher matcher = Pattern.compile(operation).matcher(validString.trim());
         String operation = null;
         if (matcher.find()) {
             operation = matcher.group();
         }
-        String[] numbers = validString.split("\\" + operation);
+        String[] numbers = validString.split(MessageFormat.format("\\{0}", operation));
         checkOnlyArabicOrOnlyRoman(numbers[0], numbers[1]);
         return createMathematicalOperation(operation, numbers);
     }
