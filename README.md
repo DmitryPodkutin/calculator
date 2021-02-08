@@ -1,5 +1,7 @@
  ### Задача: “Калькулятор”
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0688c6a044524d958e7b84de897c28c8)](https://app.codacy.com/gh/DmitryPodkutin/calculator?utm_source=github.com&utm_medium=referral&utm_content=DmitryPodkutin/calculator&utm_campaign=Badge_Grade)
+
 #### Описание:
 
 Создайте консольное приложение “Калькулятор”. Приложение должно читать из консоли введенные пользователем арифметические операции и выводить в консоль результат их выполнения.
